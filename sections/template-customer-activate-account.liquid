@@ -6,7 +6,7 @@
         </div>
 
         <div>
-            {% form 'activate_customer_password' %}
+            {% form 'activate_customer_password', class: 'space-y-4', id: 'activate_account_form' %}
                 <div>
                     <label for="password">Password</label>
                     <input type="password" 
@@ -27,6 +27,10 @@
                         class="relative block w-full px-3 py-2 border placeholder-gray-300 text-gray-700"
                         autocomplete="new-password"
                     >
+                </div>
+
+                <div class="block md:flex">
+                    <button type="submit" class="w-full border py-2 px-4 text-sm font-medium text-white bg-gray-700 hover:bg-gray-900">Activate account</button>
                 </div>
             {% endform %}
         </div>
