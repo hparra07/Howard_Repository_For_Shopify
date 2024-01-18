@@ -4,5 +4,20 @@
             <h1 class="mt-6 text-center text-3xl font-bold text-gray 700">Activate account</h1>
             <p class="mt-4 text-center">Create your password to activate your account</p>
         </div>
+
+        <div>
+            {% form 'activate_customer_password' %}
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" 
+                        name="customer[password]" 
+                        id="password"
+                        placeholder="New password"
+                        class="relative block w-full px-3 py-2 border placeholder-gray-300 text-gray-700"
+                        autocomplete="new-password"
+                    >
+                </div>
+            {% endform %}
+        </div>
     </div>
 </div>
