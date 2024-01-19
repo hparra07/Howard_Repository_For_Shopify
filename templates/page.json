@@ -1,8 +1,19 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-page"
-        }
+  "sections": {
+    "template": {
+      "type": "template-page",
+      "settings": {
+      }
     },
-    "order": ["template"]
+    "contact_form_qA9ALL": {
+      "type": "contact-form",
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "template",
+    "contact_form_qA9ALL"
+  ]
 }
