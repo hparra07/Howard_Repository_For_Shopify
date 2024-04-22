@@ -16,14 +16,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-12 p-4 md:p-12">
                     <div class="w-full h-80 min-h-80 bg-gray-200 rounded-md overflow-hidden border">
                         {% if line_item.image %}
-                            <img class="w-full h-full object-center object-cover" src="{{ line_item.image | img_url: 'medium' }}" alt="{{ line_item.image.alt }}">
+                            <img class="w-full h-full object-center object-cover" src="{{ line_item.image | image_url: width: 240 }}" alt="{{ line_item.image.alt }}">
                         {% else %}
                             {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-center object-cover' }}
                         {% endif %}
                     </div>
 
                     <div>
-                        <h1 class="text-xl font-medium mb-4">{{ line_item.title | link_to: line_item.product.url}}</h1>
+                        <h1 class="text-xl font-medium mb-4">{{ line_item.title | link_to: line_item.product.url }}</h1>
 
                         <table class="table-auto w-full mb-4">
                             <tbody>
@@ -57,7 +57,7 @@
                                 <p>Street: {{ order.shipping_address.street }}</p>
                                 <p>Province: {{ order.shipping_address.province }}</p>
                                 <p>City: {{ order.shipping_address.city }}</p>
-                                <p>ZIP: {{  order.shipping_address.zip }}</p>
+                                <p>ZIP: {{ order.shipping_address.zip }}</p>
                                 <p>Country: {{ order.shipping_address.country }}</p>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                     </tr>
                     <tr>
                         <td class="border border-gray-200 px-4 py-2">Shipping</td>
-                        <td class="border border-gray-200 px-4 py-2">{{ order.shipping_price |  money }}</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ order.shipping_price | money }}</td>
                     </tr>
                     <tr>
                         <td class="border border-gray-200 px-4 py-2">Total price</td>

@@ -27,7 +27,7 @@
             {% when 'featured_image' %}
                 <div itemprop="image" class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
                     {% if article.image != blank %}
-                        <img class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | img_url: 'large' }}" alt="{{ article.image.alt }}">
+                        <img class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | image_url: width: 480 }}" alt="{{ article.image.alt }}">
                     {% else %}
                         {% assign placeholder_image = 'lifestyle-2' %}
                         {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
@@ -153,13 +153,13 @@
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": {{ article.title | json }},
-        "articleBody": {{ article.content |  strip_html | json }},
+        "articleBody": {{ article.content | strip_html | json }},
         {% if article.excerpt != blank %}
-            "description": {{ article.excerpt |  strip_html | json }},
+            "description": {{ article.excerpt | strip_html | json }},
         {% endif %}
         {% if article.image %}
             "image": [
-                {{ article.image | img_url: 'medium' | prepend: 'https' | json }}
+                {{ article.image | image_url: width: 240 | prepend: 'https' | json }}
             ],
         {% endif %}
         "datePublished": {{ article.published_at | date: format: "default" | json }},
