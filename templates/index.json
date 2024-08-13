@@ -5,7 +5,10 @@
             "settings": {
                 "featured_collection": "all"
             }
+        },
+        "heading": {
+            "type": "heading"
         }
     },
-    "order": ["featured-collection"]
+    "order": ["featured-collection", "heading"]
 }

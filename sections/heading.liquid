@@ -1,0 +1,26 @@
+<div class="flex flex-col items-center my-8">
+    {% if section.settings.heading_slider != blank %}
+        <h3 class="product-slider___title">
+            {{ section.settings.heading_slider }}
+        </h3>
+    {% endif %}
+</div>
+
+{% schema %}
+    {
+        "name": "Heading",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "heading_slider",
+                "label": "Heading",
+                "default": "<p>Heading</p>"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Heading"
+            }
+        ]
+    }
+{% endschema %}
