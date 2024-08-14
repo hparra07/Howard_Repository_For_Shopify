@@ -20,8 +20,9 @@
         "content_width": "max",
         "button_link": "",
         "button_label": "explore",
-        "margin_top": 100,
-        "margin_bottom": 100
+        "button_style": "primary",
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "heading": {
