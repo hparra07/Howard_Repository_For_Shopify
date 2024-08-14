@@ -1,0 +1,237 @@
+{{ 'section-banner-with-text.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+	{% render 'spaced-section' %}
+{% endstyle %}
+
+{% liquid
+	assign image_size = section.settings.image_size
+
+	case image_size
+		when 'adapt'
+			assign section_size = 'adapt'
+		when 'small'
+			assign section_size = '30vh'
+		when 'medium'
+			assign section_size = '60vh'
+		when 'large'
+			assign section_size = '100vh'
+	endcase
+%}
+
+<div class="banner-with-text text-position--{{ section.settings.text_alignment }}">
+
+	<div class="banner-with-text__image-block">
+		{% liquid
+			assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+			assign adapt_height = 1 | divided_by: section.settings.image.aspect_ratio | times: 100 | append: '%'
+			if image_size == 'adapt'
+				assign section_size = adapt_height
+			endif
+		%}
+		{% style %}
+			#shopify-section-{{ section.id }} .banner-with-text{
+				--slide-height : {{ section_size }};
+			}
+		{% endstyle %}
+		{%- if section.settings.image != blank -%}
+			{{
+				section.settings.image
+				| image_url: width: 2240
+				| image_tag:
+					loading: 'lazy',
+					widths: '360, 533, 720, 940, 1066,1340, 1560, 1920, 2240',
+					class: 'motion-reduce',
+					width: section.settings.image.width,
+					height: image_height
+			}}
+		{% elsif section.settings.video == null %}
+			{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+		{%- endif -%}
+	</div>
+
+	<div
+		class="banner-with-text__content-block fullscreen-container section-{{ section.id }}-padding"
+	>
+		<div class="banner-with-text__content-wrapper">
+			<div class="banner-with-text__content-box content-width--{{ section.settings.content_width }}">
+				{% if section.settings.title != blank %}
+					<h2 class="mx-4 text-3xl">
+						{{ section.settings.title }}
+					</h2>
+				{% endif %}
+				{% if section.settings.content_text != blank %}
+					<div class="text mx-4">{{ section.settings.content_text }}</div>
+				{% endif %}
+				{% if section.settings.button_label != blank %}
+					<a
+						{% if section.settings.button_link.url != blank %}
+							href="{{ section.settings.button_link }}"
+						{% endif %}
+						type="button"
+						{% if section.settings.button_link.url == blank %}
+							aria-disabled="true"
+						{% endif %}
+						class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-4 rounded-sm font-medium"
+					>
+						{{ section.settings.button_label }}
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Banner with text",
+	"tag": "section",
+	"class": "section section-banner-with-text",
+	"enabled_on": {
+		"templates": ["*"]
+	},
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Background image"
+		},
+		{
+			"type": "select",
+			"id": "image_size",
+			"default": "large",
+			"label": "Size",
+			"options": [
+				{
+					"value": "adapt",
+					"label": "Adapt"
+				},
+				{
+					"value": "small",
+					"label": "Small"
+				},
+				{
+					"value": "medium",
+					"label": "Medium"
+				},
+				{
+					"value": "large",
+					"label": "Large"
+				}
+			]
+		},
+		{
+			"type": "richtext",
+			"id": "title",
+			"label": "Heading",
+			"default": "<p>Your heading text</p>"
+		},
+		{
+			"type": "richtext",
+			"id": "content_text",
+			"label": "Text",
+			"default": "<p>Your text</p>"
+		},
+		{
+			"type": "select",
+			"id": "text_alignment",
+			"default": "left",
+			"label": "Text alignment",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			]
+		},
+		{
+			"type": "select",
+			"id": "content_width",
+			"default": "max",
+			"label": "Content width",
+			"options": [
+				{
+					"value": "one-quarter",
+					"label": "25%"
+				},
+				{
+					"value": "one-third",
+					"label": "33%"
+				},
+				{
+					"value": "a-half",
+					"label": "50%"
+				},
+				{
+					"value": "sixty",
+					"label": "60%"
+				},
+				{
+					"value": "seventy",
+					"label": "70%"
+				},
+				{
+					"value": "ninety",
+					"label": "90%"
+				},
+				{
+					"value": "max",
+					"label": "Max"
+				}
+			]
+		},
+		{
+			"type": "header",
+			"content": "Button options"
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "Link"
+		},
+		{
+			"type": "text",
+			"id": "button_label",
+			"label": "Label",
+			"default": "explore"
+		},
+		{
+			"type": "header",
+			"content": "Section margin"
+		},
+		{
+			"type": "range",
+			"id": "margin_top",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 100,
+			"unit": "px",
+			"label": "Top margin"
+		},
+		{
+			"type": "range",
+			"id": "margin_bottom",
+			"min": 0,
+			"max": 200,
+			"step": 10,
+			"default": 100,
+			"unit": "px",
+			"label": "Bottom margin"
+		}
+	],
+	"presets": [
+		{
+			"name": "Banner with text"
+		}
+	]
+}
+{% endschema %}

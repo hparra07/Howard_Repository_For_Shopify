@@ -10,12 +10,21 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
+    
     <script src="{{ 'application.js' | asset_url }}" defer></script>
     {{ 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js' | script_tag }}
 
     <style>
       [x-cloack] { display: none !important ;}
     </style>
+    
+    {%- if settings.favicon != blank -%}
+			<link
+				rel="icon"
+				type="image/png"
+				href="{{ settings.favicon | img_url: '32x32' }}"
+			>
+		{%- endif -%}
 
   </head>
   <body>
