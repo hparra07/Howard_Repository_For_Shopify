@@ -3,10 +3,15 @@
 <div class="relative bg-white" x-data="{ mobileMenuOpen: false, searchBarOpen: false }" x-cloak>
     <div class="mx-auto px-4 sm:px-6">
         <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-            <!-- STORE NAME / STORE LOGO -->
-            <div class="flex justify-start lg:flex-1 truncate">
+        <!-- STORE NAME / STORE LOGO -->
+        <div class="flex justify-start lg:flex-1 truncate">
+            {% if section.settings.logo_image %}
+                <img src="{{ section.settings.logo_image | image_url: width: 240 }}" alt="{{ shop.name }}" loading="lazy" width="{{ section.settings.logo_width }}"
+                height="{{ section.settings.logo.height }}">
+            {% else %}
                 <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
-            </div>
+            {% endif %}
+        </div>
 
             <div class="-mr-2 -my-2 ml-3 md:hidden">
                 <button x-on:click="mobileMenuOpen = true" type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
@@ -158,6 +163,21 @@
     {
         "name": "Header",
         "settings": [
+            {
+                "type": "image_picker",
+                "id": "logo_image",
+                "label": "Logo"
+            },
+            {
+                "type": "range",
+                "id": "logo_width",
+                "min": 50,
+                "max": 350,
+                "step": 5,
+                "default": 90,
+                "unit": "px",
+                "label": "Custom logo width"
+            },
             {
                 "type":"text",
                 "id": "mobile_menu_title",
