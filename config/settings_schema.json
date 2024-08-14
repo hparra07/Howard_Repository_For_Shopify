@@ -6,5 +6,453 @@
     "theme_author": "Howard Parra",
     "theme_documentation_url": "https://github.com/Shopify/themekit",
     "theme_support_url": "https://github.com/Shopify/themekit/issues"
-  }
+  },
+  {
+		"name": "Typography",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Headings"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_header_font",
+				"default": "helvetica_n3",
+				"label": "Font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_header_font_alt",
+				"default": "cormorant_i3",
+				"label": "Font for included in header italic",
+				"info": "Used when you italic text in the header settings."
+			},
+			{
+				"type": "range",
+				"id": "type_header_interval",
+				"min": 0.5,
+				"max": 1.5,
+				"step": 0.1,
+				"default": 1.3,
+				"label": "Adjust italic font size",
+				"info": "This option allows to fine-tune the heading italic font size to match the size of the main heading font"
+			},
+			{
+				"type": "range",
+				"id": "heading_h1_size",
+				"min": 40,
+				"max": 120,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H1",
+				"default": 100
+			},
+			{
+				"type": "range",
+				"id": "heading_h2_size",
+				"min": 30,
+				"max": 100,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H2",
+				"default": 64
+			},
+			{
+				"type": "range",
+				"id": "heading_h3_size",
+				"min": 20,
+				"max": 80,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H3",
+				"default": 56
+			},
+			{
+				"type": "range",
+				"id": "heading_h4_size",
+				"min": 20,
+				"max": 60,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H4",
+				"default": 40
+			},
+			{
+				"type": "range",
+				"id": "heading_h5_size",
+				"min": 14,
+				"max": 40,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H5",
+				"default": 32
+			},
+			{
+				"type": "range",
+				"id": "heading_h6_size",
+				"min": 12,
+				"max": 30,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size H6",
+				"default": 20
+			},
+			{
+				"type": "range",
+				"id": "type_header_letter_spacing",
+				"min": -1,
+				"max": 1,
+				"step": 0.1,
+				"default": -0.5,
+				"unit": "em",
+				"label": "Headings letter spacing"
+			},
+			{
+				"type": "range",
+				"min": 1,
+				"max": 2,
+				"step": 0.1,
+				"id": "type_header_line_height",
+				"default": 1.1,
+				"label": "Headings line height"
+			},
+			{
+				"type": "range",
+				"id": "menu_link_size",
+				"min": 16,
+				"max": 40,
+				"step": 1,
+				"unit": "px",
+				"label": "Fullscreen menu link font size",
+				"default": 20
+			},
+			{
+				"type": "header",
+				"content": "Product card"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_header_font_card",
+				"default": "helvetica_n4",
+				"label": "Heading font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "header",
+				"content": "Heading font size"
+			},
+			{
+				"type": "range",
+				"id": "heading_size_card",
+				"min": 12,
+				"max": 28,
+				"step": 1,
+				"unit": "px",
+				"label": "Classic, small, and medium card",
+				"default": 16
+			},
+			{
+				"type": "range",
+				"id": "heading_size_card_big",
+				"min": 16,
+				"max": 40,
+				"step": 1,
+				"unit": "px",
+				"label": "Big card",
+				"info": "E.g., Product card on a collection page or in the Product slider section.",
+				"default": 32
+			},
+			{
+				"type": "select",
+				"id": "product_title_text_transform",
+				"label": "Text transform",
+				"options": [
+					{
+						"value": "none",
+						"label": "None"
+					},
+					{
+						"value": "uppercase",
+						"label": "Uppercase"
+					},
+					{
+						"value": "lowercase",
+						"label": "Lowercase"
+					},
+					{
+						"value": "capitalize",
+						"label": "Capitalize"
+					}
+				],
+				"default": "capitalize"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_text_font_card",
+				"default": "helvetica_n4",
+				"label": "Description font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "range",
+				"id": "text_size_card",
+				"min": 12,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Description font size",
+				"default": 12
+			},
+			{
+				"type": "header",
+				"content": "Body"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_body_font",
+				"default": "helvetica_n4",
+				"label": "Font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "range",
+				"id": "type_body_line_height",
+				"min": 120,
+				"max": 200,
+				"default": 140,
+				"label": "Body text line height"
+			},
+			{
+				"type": "range",
+				"id": "body_size",
+				"min": 10,
+				"max": 24,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size text",
+				"default": 16
+			},
+			{
+				"type": "header",
+				"content": "Subheading"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_subtitle_font",
+				"default": "helvetica_n4",
+				"label": "Font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "select",
+				"id": "subtitle_text_transform",
+				"label": "t:settings_schema.typography.settings.subtitle_text_transform.label",
+				"options": [
+					{
+						"value": "none",
+						"label": "None"
+					},
+					{
+						"value": "uppercase",
+						"label": "Uppercase"
+					},
+					{
+						"value": "lowercase",
+						"label": "Lowercase"
+					},
+					{
+						"value": "capitalize",
+						"label": "Capitalize"
+					}
+				],
+				"default": "uppercase"
+			},
+			{
+				"type": "range",
+				"id": "subtitle_size",
+				"min": 10,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size",
+				"default": 14
+			},
+			{
+				"type": "header",
+				"content": "Button"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_button_font",
+				"default": "helvetica_n4",
+				"label": "Font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "select",
+				"id": "button_text_transform",
+				"label": "Text transform",
+				"options": [
+					{
+						"value": "none",
+						"label": "None"
+					},
+					{
+						"value": "uppercase",
+						"label": "Uppercase"
+					},
+					{
+						"value": "lowercase",
+						"label": "Lowercase"
+					},
+					{
+						"value": "capitalize",
+						"label": "Capitalize"
+					}
+				],
+				"default": "uppercase"
+			},
+			{
+				"type": "range",
+				"id": "btn_text_size",
+				"min": 10,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Font size",
+				"default": 12
+			},
+			{
+				"type": "header",
+				"content": "Menu header"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_header_menu_font",
+				"default": "helvetica_n4",
+				"label": "Font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "range",
+				"id": "link_size_header",
+				"min": 10,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Main menu font size",
+				"default": 12
+			},
+			{
+				"type": "select",
+				"id": "header_menu_text_transform",
+				"label": "Text transform",
+				"options": [
+					{
+						"value": "none",
+						"label": "None"
+					},
+					{
+						"value": "uppercase",
+						"label": "Uppercase"
+					},
+					{
+						"value": "lowercase",
+						"label": "Lowercase"
+					}
+				],
+				"default": "uppercase"
+			},
+			{
+				"type": "header",
+				"content": "Menu footer"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_footer_menu_font",
+				"default": "helvetica_n4",
+				"label": "Links font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "range",
+				"id": "link_size_footer",
+				"min": 12,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Main menu font size",
+				"default": 16
+			},
+			{
+				"type": "range",
+				"id": "link_size_footer_bottom",
+				"min": 12,
+				"max": 20,
+				"step": 1,
+				"unit": "px",
+				"label": "Bottom menu font size",
+				"default": 14
+			},
+			{
+				"type": "header",
+				"content": "Popups"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_popups_heading_font",
+				"default": "helvetica_n4",
+				"label": "Heading popups font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "font_picker",
+				"id": "type_popups_text_font",
+				"default": "helvetica_n4",
+				"label": "Text popup font",
+				"info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+			},
+			{
+				"type": "range",
+				"id": "popup_heading_size",
+				"min": 20,
+				"max": 40,
+				"step": 1,
+				"unit": "px",
+				"label": "Heading popup font size",
+				"default": 30
+			},
+			{
+				"type": "range",
+				"id": "popup_text_size",
+				"min": 10,
+				"max": 24,
+				"step": 1,
+				"unit": "px",
+				"label": "Text popup font size",
+				"default": 14
+			},
+			{
+				"type": "range",
+				"id": "notification_heading_size",
+				"min": 12,
+				"max": 30,
+				"step": 1,
+				"unit": "px",
+				"label": "Heading notification banner font size",
+				"default": 12
+			},
+			{
+				"type": "range",
+				"id": "notification_text_size",
+				"min": 10,
+				"max": 24,
+				"step": 1,
+				"unit": "px",
+				"label": "Text notification banner font size",
+				"default": 12
+			}
+		]
+	},
 ]

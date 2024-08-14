@@ -15,7 +15,7 @@
 		when 'medium'
 			assign section_size = '60vh'
 		when 'large'
-			assign section_size = '100vh'
+			assign section_size = 'calc(100vh - var(--announcement-height))'
 	endcase
 %}
 
@@ -72,7 +72,7 @@
 						{% if section.settings.button_link.url == blank %}
 							aria-disabled="true"
 						{% endif %}
-						class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-4 rounded-sm font-medium"
+						class="button button--{{ section.settings.button_style }}"
 					>
 						{{ section.settings.button_label }}
 					</a>
@@ -202,6 +202,26 @@
 			"id": "button_label",
 			"label": "Label",
 			"default": "explore"
+		},
+		{
+			"type": "select",
+			"id": "button_style",
+			"options": [
+				{
+					"value": "primary",
+					"label": "Primary"
+				},
+				{
+					"value": "secondary",
+					"label": "Secondary"
+				},
+				{
+					"value": "tertiary",
+					"label": "Tertiary"
+				}
+			],
+			"default": "primary",
+			"label": "Button style"
 		},
 		{
 			"type": "header",

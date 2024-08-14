@@ -10,8 +10,10 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
     
     <script src="{{ 'application.js' | asset_url }}" defer></script>
+
     {{ 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js' | script_tag }}
 
     <style>
@@ -25,6 +27,171 @@
 				href="{{ settings.favicon | img_url: '32x32' }}"
 			>
 		{%- endif -%}
+
+    {%- liquid
+      assign body_font_light = settings.type_body_font | font_modify: 'weight', '300'
+      assign body_font_regular = settings.type_body_font | font_modify: 'weight', '400'
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+      assign heading_font_italic = settings.type_header_font | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}
+
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+			{{ settings.type_header_font | font_face: font_display: 'swap' }}
+			{{ settings.type_header_font_alt | font_face: font_display: 'swap' }}
+			{{ settings.type_button_font | font_face: font_display: 'swap' }}
+			{{ settings.type_header_font_card | font_face: font_display: 'swap' }}
+			{{ body_font_light | font_face: font_display: 'swap' }}
+			{{ body_font_regular | font_face: font_display: 'swap' }}
+			{{ body_font_bold | font_face: font_display: 'swap' }}
+			{{ body_font_italic | font_face: font_display: 'swap' }}
+			{{ heading_font_italic | font_face: font_display: 'swap' }}
+			{{ body_font_bold_italic | font_face: font_display: 'swap' }}
+
+			:root {
+			--font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+			--font-body-style: {{ settings.type_body_font.style }};
+			--font-body-weight: {{ settings.type_body_font.weight }};
+
+			--font-body-size: {{ settings.body_size }}px;
+			--font-body-line-height: {{ settings.type_body_line_height }}%;
+
+			--font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+			--font-heading-style: {{ settings.type_header_font.style }};
+			--font-heading-weight: {{ settings.type_header_font.weight }};
+			--font-heading-letter-spacing: {{ settings.type_header_letter_spacing }}em;
+			--body-letter-spacing: 0em;
+
+			--font-heading-italic-interval: {{ settings.type_header_interval }};
+			--font-heading-line-height: {{ settings.type_header_line_height }};
+
+			--font-heading-alt-family: {{ settings.type_header_font_alt.family }}, {{ settings.type_header_font.fallback_families }};
+			--font-heading-alt-style: {{ settings.type_header_font_alt.style }};
+			--font-heading-alt-weight: {{ settings.type_header_font_alt.weight }};
+
+			--font-subtitle-family: {{ settings.type_subtitle_font.family }}, {{ settings.type_subtitle_font.fallback_families }};
+			--font-subtitle-style: {{ settings.type_subtitle_font.style }};
+			--font-subtitle-weight: {{ settings.type_subtitle_font.weight }};
+			--font-subtitle-text-transform: {{ settings.subtitle_text_transform }};
+			--font-subtitle-size: {{ settings.subtitle_size }}px;
+
+			--font-heading-h1-size: {{ settings.heading_h1_size }}px;
+			--font-heading-h2-size: {{ settings.heading_h2_size }}px;
+			--font-heading-h3-size: {{ settings.heading_h3_size }}px;
+			--font-heading-h4-size: {{ settings.heading_h4_size }}px;
+			--font-heading-h5-size: {{ settings.heading_h5_size }}px;
+			--font-heading-h6-size: {{ settings.heading_h6_size }}px;
+
+			--font-heading-card-family: {{ settings.type_header_font_card.family }}, {{ settings.type_header_font_card.fallback_families }};
+			--font-heading-card-style: {{ settings.type_header_font_card.style }};
+			--font-heading-card-weight: {{ settings.type_header_font_card.weight }};
+			--font-text-card-family: {{ settings.type_text_font_card.family }}, {{ settings.type_text_font_card.fallback_families }};
+			--font-text-card-style: {{ settings.type_text_font_card.style }};
+			--font-text-card-weight: {{ settings.type_text_font_card.weight }};
+
+			--font-heading-card-size: {{ settings.heading_size_card }}px;
+			--font-heading-card-size-big: {{ settings.heading_size_card_big }}px;
+			--font-text-card-size: {{ settings.text_size_card }}px;
+
+			--font-button-family: {{ settings.type_button_font.family }}, {{ settings.type_button_font.fallback_families }};
+			--font-button-style: {{ settings.type_button_font.style }};
+			--font-button-weight: {{ settings.type_button_font.weight }};
+			--font-button-text-transform: {{ settings.button_text_transform }};
+			--button-text-size: {{ settings.btn_text_size }}px;
+
+			--font-button-family: {{ settings.type_button_font.family }}, {{ settings.type_button_font.fallback_families }};
+			--font-button-style: {{ settings.type_button_font.style }};
+			--font-button-weight: {{ settings.type_button_font.weight }};
+			--font-button-text-transform: {{ settings.button_text_transform }};
+			--font-button-letter-spacing: {{ settings.type_body_letter_spacing }}em;
+			--font-subtitle-letter-spacing: {{ settings.type_body_letter_spacing }}em;
+
+			--font-header-menu-family: {{ settings.type_header_menu_font.family }}, {{ settings.type_header_menu_font.fallback_families }};
+			--font-header-menu-style: {{ settings.type_header_menu_font.style }};
+			--font-header-menu-weight: {{ settings.type_header_menu_font.weight }};
+			--font-header-menu-text-transform: {{ settings.header_menu_text_transform }};
+			--font-header-link-size: {{ settings.link_size_header }}px;
+
+			--font-footer-menu-family: {{ settings.type_footer_menu_font.family }}, {{ settings.type_footer_menu_font.fallback_families }};
+			--font-footer-menu-style: {{ settings.type_footer_menu_font.style }};
+			--font-footer-menu-weight: {{ settings.type_footer_menu_font.weight }};
+			--font-footer-link-size: {{ settings.link_size_footer }}px;
+			--font-footer-bottom-link-size: {{ settings.link_size_footer_bottom }}px;
+
+			--font-popups-heading-family: {{ settings.type_popups_heading_font.family }}, {{ settings.type_popups_heading_font.fallback_families }};
+				--font-popups-heading-style: {{ settings.type_popups_heading_font.style }};
+				--font-popups-heading-weight: {{ settings.type_popups_heading_font.weight }};
+				--font-popups-text-family: {{ settings.type_popups_text_font.family }}, {{ settings.type_popups_text_font.fallback_families }};
+				--font-popups-text-style: {{ settings.type_popups_text_font.style }};
+				--font-popups-text-weight: {{ settings.type_popups_text_font.weight }};
+				--font-popup-heading-size: {{ settings.popup_heading_size }}px;
+				--font-popup-text-size: {{ settings.popup_text_size }}px;
+				--font-notification-heading-size: {{ settings.notification_heading_size }}px;
+				--font-notification-text-size: {{ settings.notification_text_size }}px;
+
+			--color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+			--color-title-text: {{ settings.colors_text_title.red }}, {{ settings.colors_text_title.green }}, {{ settings.colors_text_title.blue }};
+
+			--color-base-text-default: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
+
+			--color-base-text-dark: {{ settings.colors_text_dark.red }}, {{ settings.colors_text_dark.green }}, {{ settings.colors_text_dark.blue }};
+			--color-title-text-dark: {{ settings.colors_text_title_dark.red }}, {{ settings.colors_text_title_dark.green }}, {{ settings.colors_text_title_dark.blue }};
+
+			--color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
+			--color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
+			--color-base-background-5: {{ settings.colors_background_5.red }}, {{ settings.colors_background_5.green }}, {{ settings.colors_background_5.blue }};
+			--color-base-background-3: {{ settings.colors_background_3.red }}, {{ settings.colors_background_3.green }}, {{ settings.colors_background_3.blue }};
+			--color-base-background-4: {{ settings.colors_background_4.red }}, {{ settings.colors_background_4.green }}, {{ settings.colors_background_4.blue }};
+
+			--color-announcement-bar-background-1: {{ settings.colors_background_announcement_bar_1.red }}, {{ settings.colors_background_announcement_bar_1.green }}, {{ settings.colors_background_announcement_bar_1.blue }};
+			--color-announcement-bar-background-2: {{ settings.colors_background_announcement_bar_2.red }}, {{ settings.colors_background_announcement_bar_2.green }}, {{ settings.colors_background_announcement_bar_2.blue }};
+
+			--color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
+			--color-base-button-labels-hover: {{ settings.colors_solid_button_hover_labels.red }}, {{ settings.colors_solid_button_hover_labels.green }}, {{ settings.colors_solid_button_hover_labels.blue }};
+			--color-base-button-background: {{ settings.colors_solid_button_background.red }}, {{ settings.colors_solid_button_background.green }}, {{ settings.colors_solid_button_background.blue }};
+			--color-base-button-background-hover: {{ settings.colors_solid_button_hover_background.red }}, {{ settings.colors_solid_button_hover_background.green }}, {{ settings.colors_solid_button_hover_background.blue }};
+			--color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
+			--color-secondary-button-background-hover: {{ settings.colors_secondary_button_hover_background.red }}, {{ settings.colors_secondary_button_hover_background.green }}, {{ settings.colors_secondary_button_hover_background.blue }};
+			--color-secondary-button-labels: {{ settings.colors_secondary_button_labels.red }}, {{ settings.colors_secondary_button_labels.green }}, {{ settings.colors_secondary_button_labels.blue }};
+			--color-secondary-button-labels-hover: {{ settings.colors_secondary_button_hover_labels.red }}, {{ settings.colors_secondary_button_hover_labels.green }}, {{ settings.colors_secondary_button_hover_labels.blue }};
+			--color-tertiary-button-labels: {{ settings.colors_tertiary_button_labels.red }}, {{ settings.colors_tertiary_button_labels.green }}, {{ settings.colors_tertiary_button_labels.blue }};
+			--color-tertiary-button-background: {{ settings.colors_tertiary_button_background.red }}, {{ settings.colors_tertiary_button_background.green }}, {{ settings.colors_tertiary_button_background.blue }};
+			--color-underline-button-labels: {{ settings.colors_underline_button_labels.red }}, {{ settings.colors_underline_button_labels.green }}, {{ settings.colors_underline_button_labels.blue }};
+			--payment-terms-background-color: {{ settings.colors_background_1 }};
+			--color-overlay-background: {{ settings.colors_background_overlay.red }}, {{ settings.colors_background_overlay.green }}, {{ settings.colors_background_overlay.blue }};
+			--color-accent: {{ settings.colors_accent.red }}, {{ settings.colors_accent.green }}, {{ settings.colors_accent.blue }};
+
+			--color-base-background-input: {{ settings.colors_input_background.red }}, {{ settings.colors_input_background.green }}, {{ settings.colors_input_background.blue }};
+
+			--color-base-border-input: {{ settings.colors_input_border.red }}, {{ settings.colors_input_border.green }}, {{ settings.colors_input_border.blue }};
+			--color-hover-border-input: {{ settings.colors_input_hover_border.red }}, {{ settings.colors_input_hover_border.green }}, {{ settings.colors_input_hover_border.blue }};
+
+			--color-badge-icon: {{ settings.badge_icon_color }};
+			--badge-icon-size: {{ settings.badge_icon_size }}px;
+			--badge-discount-size: {{ settings.badge_discount_size }}px;
+			--color-border: {{ settings.color_border.red }}, {{ settings.color_border.green }}, {{ settings.color_border.blue }};
+			}
+
+      body {
+			position: relative;
+			display: grid;
+			grid-template-rows: auto auto 1fr auto;
+			grid-template-columns: 100%;
+			min-height: 100%;
+			margin: 0;
+			font-size: var(--font-body-size);
+			line-height: 1.5;
+			font-family: var(--font-body-family);
+			font-style: var(--font-body-style);
+			font-weight: var(--font-body-weight);
+			overflow-x: hidden;
+			-webkit-font-smoothing: antialiased;
+			}
+
+    {% endstyle %}
 
   </head>
   <body>

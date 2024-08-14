@@ -1,0 +1,59 @@
+:root {
+    --color-error: 235, 87, 87;
+    --duration-short: 100ms;
+    --duration-default: 300ms;
+    --duration-long-cubic: 500ms;
+    --duration-long: 1s;
+    --announcement-height: 0px;
+    --my-header-height: 0;
+}
+
+:root,
+.color-background-1 {
+    --color-foreground: var(--color-base-text);
+    --color-foreground-title: var(--color-title-text);
+/*     --color-background: var(--color-base-background-1);
+    --color-background-section-border: var(--color-section-border);
+    --color-background-input: var(--color-base-background-input);
+    --color-border-input: var(--color-base-border-input);
+    --color-border-input-hover: var(--color-hover-border-input);
+    --color-announcement-bar: var(--color-announcement-bar-background);
+    --color-link: var(--color-base-text);
+    --alpha-link: 0.5;
+    --color-button: var(--color-base-button-background);
+    --color-button-text: var(--color-base-solid-button-labels);
+    --color-button-secondary: var(--color-base-outline-button-labels);
+    --color-button-secondary-text: var(--color-secondary-button-labels);
+    --color-button-tertiary: var(--color-tertiary-button-background);
+    --color-button-tertiary-text: var(--color-tertiary-button-labels);
+    --alpha-button-background: 1;
+    --alpha-button-border: 1;
+    --color-overlay: var(--color-overlay-background);
+    --color-social: 0, 0, 0;
+    --color-placeholder-input: 0, 0, 0;
+    --alpha-placeholder-input: 0.5; */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: calc(var(--font-heading-letter-spacing) * 0.1);
+    color: rgb(var(--color-foreground-title));
+    line-height: var(--font-heading-line-height);
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
