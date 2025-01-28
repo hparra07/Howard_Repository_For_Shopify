@@ -1,24 +1,26 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner_with_text_Rz9DhP": {
       "type": "banner-with-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/17021-4k.jpg",
+        "image": "shopify://shop_images/17021-4k.jpg",
         "image_size": "medium",
-        "title": "<p>Hi! I'm Howard! Front-End Developer<\/p>",
-        "content_text": "<p>Crafting Digital Excellence: A Visionary Approach to Web Development.<\/p>",
+        "title": "<p>Hi! I'm Howard! Front-End Developer</p>",
+        "content_text": "<p>Crafting Digital Excellence: A Visionary Approach to Web Development.</p>",
         "text_alignment": "center",
         "content_width": "max",
-        "button_link": "shopify:\/\/pages\/about-us",
+        "overlay_enable": true,
+        "overlay_opacity": 20,
+        "button_link": "shopify://pages/about-us",
         "button_label": "Explore",
         "button_style": "tertiary",
         "margin_top": 0,
@@ -28,7 +30,7 @@
     "heading": {
       "type": "heading",
       "settings": {
-        "heading_slider": "<p>Heading<\/p>"
+        "heading_slider": "<p>Heading</p>"
       }
     },
     "featured-collection": {
@@ -38,11 +40,203 @@
         "featured_collection": "",
         "number_of_products_to_show": 4
       }
+    },
+    "best_sellers_yQ6qt6": {
+      "type": "best-sellers",
+      "blocks": {
+        "product_card_XxyG9d": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_Varni3": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_whpgr8": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_AzGxjU": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_iNix98": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_rG9cLw": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_tey7nU": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_AY3gnC": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_QPwkgb": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        },
+        "product_card_qnrHLW": {
+          "type": "product_card",
+          "settings": {
+            "show_pill_left": true,
+            "pill_left_text": "New",
+            "show_pill_right": true,
+            "pill_right_text": "Sale",
+            "main_image": "shopify://shop_images/img-9.jpg",
+            "hover_image": "shopify://shop_images/img-10.jpg",
+            "product_title": "Product Name",
+            "vendor": "Vendor",
+            "rating_filled": 5,
+            "rating_empty": 0,
+            "reviews_count": 425,
+            "price": "$20.00"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_XxyG9d",
+        "product_card_Varni3",
+        "product_card_whpgr8",
+        "product_card_AzGxjU",
+        "product_card_iNix98",
+        "product_card_rG9cLw",
+        "product_card_tey7nU",
+        "product_card_AY3gnC",
+        "product_card_QPwkgb",
+        "product_card_qnrHLW"
+      ],
+      "settings": {
+        "section_title": "Best Sellers",
+        "shop_all_text": "Shop all best sellers →"
+      }
     }
   },
   "order": [
     "banner_with_text_Rz9DhP",
     "heading",
-    "featured-collection"
+    "featured-collection",
+    "best_sellers_yQ6qt6"
   ]
 }
