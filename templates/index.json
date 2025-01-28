@@ -27,6 +27,12 @@
         "margin_bottom": 0
       }
     },
+    "heading_y3wwQD": {
+      "type": "heading",
+      "settings": {
+        "heading_slider": "<p>Challenge</p>"
+      }
+    },
     "best_sellers_yQ6qt6": {
       "type": "best-sellers",
       "blocks": {
@@ -221,6 +227,7 @@
   },
   "order": [
     "banner_with_text_Rz9DhP",
+    "heading_y3wwQD",
     "best_sellers_yQ6qt6"
   ]
 }
