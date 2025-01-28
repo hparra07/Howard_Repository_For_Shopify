@@ -79,7 +79,6 @@
 
           <div class="{{ classes }}">
             <div class="group relative overflow-hidden">
-              {# PILLS - Si quisieras customizarlas, puedes usar settings en tu schema. #}
               <div>
                 {% if block.settings.show_pill_left == true %}
                   <span class="absolute top-2 left-2 z-10 text-xs font-bold uppercase bg-green-200 text-green-800 px-2 py-1 rounded-full">
@@ -94,7 +93,6 @@
                 {% endif %}
               </div>
 
-              {# Imagen Principal #}
               {% if block.settings.main_image %}
                 <img
                   src="{{ block.settings.main_image | image_url }}"
@@ -105,7 +103,6 @@
                 >
               {% endif %}
 
-              {# Imagen Hover #}
               {% if block.settings.hover_image %}
                 <img
                   src="{{ block.settings.hover_image | image_url }}"
@@ -132,7 +129,6 @@
 
             <!-- Rating + Reviews -->
             <div class="flex items-center mt-2 text-black-500">
-              {# Mostramos 'rating_filled' estrellas rellenas y 'rating_empty' vacías, si deseas #}
               {% for i in (1..block.settings.rating_filled) %}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -326,29 +322,6 @@
       ]
     }
   ],
-  "max_blocks": 10,
-  "default": {
-    "settings": {
-      "section_title": "Best Sellers",
-      "shop_all_text": "Shop all best sellers →"
-    },
-    "blocks": [
-      {
-        "type": "product_card",
-        "settings": {
-          "show_pill_left": true,
-          "pill_left_text": "New",
-          "show_pill_right": false,
-          "pill_right_text": "Sale",
-          "product_title": "Product Name 1",
-          "vendor": "Vendor Name",
-          "rating_filled": 4,
-          "rating_empty": 1,
-          "reviews_count": 426,
-          "price": "$20.00"
-        }
-      }
-    ]
-  }
+  "max_blocks": 10
 }
 {% endschema %}
