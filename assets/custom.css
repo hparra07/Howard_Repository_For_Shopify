@@ -8,11 +8,10 @@
     --my-header-height: 0;
 }
 
-:root,
 .color-background-1 {
     --color-foreground: var(--color-base-text);
     --color-foreground-title: var(--color-title-text);
-/*     --color-background: var(--color-base-background-1);
+    --color-background: var(--color-base-background-1);
     --color-background-section-border: var(--color-section-border);
     --color-background-input: var(--color-base-background-input);
     --color-border-input: var(--color-base-border-input);
@@ -31,7 +30,7 @@
     --color-overlay: var(--color-overlay-background);
     --color-social: 0, 0, 0;
     --color-placeholder-input: 0, 0, 0;
-    --alpha-placeholder-input: 0.5; */
+    --alpha-placeholder-input: 0.5;
 }
 
 /* Typography */
@@ -57,3 +56,242 @@ h6,
     max-width: 100%;
 }
 
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em,
+.h0 em,
+.h1 em,
+.h2 em,
+.h3 em,
+.h4 em,
+.h5 em {
+    font-family: var(--font-heading-alt-family);
+    font-style: var(--font-heading-alt-style);
+    font-weight: var(--font-heading-alt-weight);
+    font-variant: monospace;
+    font-variant-numeric: lining-nums;
+}
+
+.h0 {
+    font-size: 50px;
+}
+
+@media only screen and (min-width: 750px) {
+    .h0 {
+        font-size: 100px;
+    }
+}
+
+h1,
+.h1 {
+    font-size: 3.5rem;
+}
+
+h1 em,
+.h1 em {
+    font-size: calc(3.5rem * var(--font-heading-italic-interval));
+}
+
+@media only screen and (min-width: 750px) {
+
+    h1,
+    .h1 {
+        font-size: var(--font-heading-h1-size);
+    }
+
+    h1 em,
+    .h1 em {
+        font-size: calc(var(--font-heading-h1-size) * var(--font-heading-italic-interval));
+    }
+}
+
+h2,
+.h2 {
+    font-size: 3rem;
+}
+
+h2 em,
+.h2 em {
+    font-size: calc(3rem * var(--font-heading-italic-interval));
+}
+
+@media only screen and (min-width: 750px) {
+
+    h2,
+    .h2 {
+        font-size: var(--font-heading-h2-size);
+    }
+
+    h2 em,
+    .h2 em {
+        font-size: calc(var(--font-heading-h2-size) * var(--font-heading-italic-interval));
+    }
+}
+
+h3,
+.h3 {
+    font-size: 2.4rem;
+}
+
+h3 em,
+.h3 em {
+    font-size: calc(2.4rem * var(--font-heading-italic-interval));
+}
+
+@media only screen and (min-width: 750px) {
+
+    h3,
+    .h3 {
+        font-size: var(--font-heading-h3-size);
+    }
+
+    h3 em,
+    .h3 em {
+        font-size: calc(var(--font-heading-h3-size) * var(--font-heading-italic-interval));
+    }
+}
+
+h4,
+.h4 {
+    font-size: 1.6rem;
+}
+
+h4 em,
+.h4 em {
+    font-size: calc(1.6rem * var(--font-heading-italic-interval));
+}
+
+@media only screen and (min-width: 750px) {
+
+    h4,
+    .h4 {
+        font-size: var(--font-heading-h4-size);
+    }
+
+    h4 em,
+    .h4 em {
+        font-size: calc(var(--font-heading-h4-size) * var(--font-heading-italic-interval));
+    }
+}
+
+h5,
+.h5 {
+    font-size: var(--font-heading-h5-size);
+}
+
+h5 em,
+.h5 em {
+    font-size: calc(var(--font-heading-h5-size) * var(--font-heading-italic-interval));
+}
+
+h6,
+.h6 {
+    font-size: var(--font-heading-h6-size);
+}
+
+h6 em,
+.h6 em {
+    font-size: calc(var(--font-heading-h6-size) * var(--font-heading-italic-interval) - 4px);
+}
+
+/* Button */
+/* Button - default */
+.button,
+.customer .button {
+    font-family: var(--font-button-family);
+    font-weight: var(--font-button-weight);
+    font-style: var(--font-button-style);
+    text-transform: var(--font-button-text-transform);
+    letter-spacing: 0.1em;
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: var(--duration-default);
+    font-size: var(--button-text-size);
+    line-height: 167%;
+    font-feature-settings: "tnum" on, "lnum" on, "case" on;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button--primary,
+.button--secondary,
+.button--tertiary,
+.customer .button--primary,
+.customer .button--secondary,
+.customer .button--tertiary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 8rem;
+    min-height: 1rem;
+    padding: 0.85rem 1rem;
+}
+
+.button--primary,
+.customer .button--primary {
+    background-color: rgba(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border: 1px solid rgba(var(--color-button));
+}
+
+.button--primary:not(.button[aria-disabled=true]):hover,
+.customer .button--primary:not(.button[aria-disabled=true]):hover {
+    background-color: rgba(var(--color-base-button-background-hover));
+    border: 1px solid rgba(var(--color-base-button-background-hover));
+    color: rgb(var(--color-base-button-labels-hover));
+}
+
+.button--secondary,
+.customer .button--secondary {
+    background-color: rgba(var(--color-button-secondary));
+    color: rgb(var(--color-button-secondary-text));
+    border: 1px solid rgba(var(--color-button-secondary));
+}
+
+.button--secondary:not(.button[aria-disabled=true]):hover,
+.customer .button--secondary:not(.button[aria-disabled=true]):hover {
+    background-color: rgba(var(--color-secondary-button-background-hover));
+    border: 1px solid rgba(var(--color-secondary-button-background-hover));
+    color: rgb(var(--color-secondary-button-labels-hover));
+}
+
+.button--tertiary,
+.customer .button--tertiary {
+    background-color: transparent;
+    color: rgb(var(--color-button-tertiary-text));
+    border: 1px solid rgb(var(--color-button-tertiary));
+}
+
+.button--tertiary:not(.button[aria-disabled=true]):hover,
+.customer .button--tertiary:not(.button[aria-disabled=true]):hover {
+    background-color: rgba(var(--color-button-tertiary-text));
+    color: #fff;
+    border: 1px solid rgb(var(--color-button-tertiary-text));
+}
+
+/* Overlay */
+
+.have-overlay {
+    position: relative;
+    z-index: 0;
+}
+
+.have-overlay::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: rgba(var(--color-overlay), 0.4);
+}

@@ -199,6 +199,10 @@
     z-index: -2;
 }
 
+.banner-with-text__image-block.have-overlay::before {
+    background: var(--slide-overlay);
+}
+
 .banner-with-text img,
 .banner-with-text svg {
     min-width: auto;

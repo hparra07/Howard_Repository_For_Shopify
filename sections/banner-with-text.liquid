@@ -19,9 +19,15 @@
 	endcase
 %}
 
-<div class="banner-with-text text-position--{{ section.settings.text_alignment }}">
+{% style %}
+	.banner-with-text__image-block {
+		--slide-overlay : rgba(var(--color-overlay), {{ section.settings.overlay_opacity }}%);
+	}
+{% endstyle %}
 
-	<div class="banner-with-text__image-block">
+<div class="banner-with-text text-position--{{ section.settings.text_alignment }} color-background-1">
+
+	<div class="banner-with-text__image-block {% if section.settings.overlay_enable %}have-overlay{% endif %}">
 		{% liquid
 			assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
 			assign adapt_height = 1 | divided_by: section.settings.image.aspect_ratio | times: 100 | append: '%'
@@ -56,7 +62,7 @@
 		<div class="banner-with-text__content-wrapper">
 			<div class="banner-with-text__content-box content-width--{{ section.settings.content_width }}">
 				{% if section.settings.title != blank %}
-					<h2 class="mx-4 text-3xl">
+					<h2 class="mx-4 h2">
 						{{ section.settings.title }}
 					</h2>
 				{% endif %}
@@ -81,6 +87,71 @@
 		</div>
 	</div>
 </div>
+
+{% javascript %}
+	const events = [
+		'shopify:section:reorder',
+		'shopify:section:deselect',
+		'shopify:section:select',
+		'shopify:section:unload',
+		'shopify:section:load',
+	];
+
+	const banner_with_text = () => {
+		let headerOverlay = document.querySelector('.overlay');
+		let pageAbout = document.querySelector('.page-about');
+		let pageLookbook = document.querySelector('.page-lookbook');
+		let breadCrumb = document.querySelector('.main-breadcrumb');
+		let colorScheme = document.querySelector('.header-color-light');
+		let colorSchemeDark = document.querySelector('.header-color-dark');
+		let firstSection = document.querySelector('main section:first-of-type');
+
+		if (
+			headerOverlay &&
+			firstSection.classList.contains('section-banner-with-text')
+		) {
+			document.querySelector('main').classList.add('page-about');
+			let pageAbout = document.querySelector('.page-about');
+			let pageLookbook = document.querySelector('.page-lookbook');
+			if (colorScheme) {
+				headerOverlay.classList.add('theme-dark');
+				headerOverlay.classList.add('header-color-background-5');
+				if (pageAbout || pageLookbook) {
+					breadCrumb && breadCrumb.classList.add('color-background-5');
+				}
+			} 
+
+			if (colorSchemeDark) {
+				headerOverlay.classList.remove('theme-dark');
+				headerOverlay.classList.remove('header-color-background-5');
+				headerOverlay.classList.add('color-background-1');
+				if (pageAbout || pageLookbook) {
+					breadCrumb && breadCrumb.classList.remove('color-background-5');
+				}
+			}
+		} else {
+			if (colorScheme) {
+				if (pageAbout || pageLookbook) {
+					breadCrumb && breadCrumb.classList.add('color-background-5');
+				}
+			}
+
+			if (colorSchemeDark) {
+				if (pageAbout || pageLookbook) {
+					breadCrumb &&	breadCrumb.classList.remove('color-background-5');
+				}
+			}
+		}
+	};
+
+	banner_with_text();
+
+	events.forEach(function (item) {
+		document.addEventListener(item, function () {
+			banner_with_text();
+		});
+	});
+{% endjavascript %}
 
 {% schema %}
 {
@@ -187,6 +258,25 @@
 					"label": "Max"
 				}
 			]
+		},
+		{
+			"type": "header",
+			"content": "Overlay options"
+		},
+		{
+			"type": "checkbox",
+			"id": "overlay_enable",
+			"default": true,
+			"label": "Enable"
+		},
+		{
+			"type": "range",
+			"id": "overlay_opacity",
+			"min": 10,
+			"max": 90,
+			"default": 20,
+			"unit": "%",
+			"label": "Opacity"
 		},
 		{
 			"type": "header",

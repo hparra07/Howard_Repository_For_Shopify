@@ -1,13 +1,13 @@
 [
-  {
-    "name": "theme_info",
-    "theme_name": "Arya y Merlina",
-    "theme_version": "1.0.0",
-    "theme_author": "Howard Parra",
-    "theme_documentation_url": "https://github.com/Shopify/themekit",
-    "theme_support_url": "https://github.com/Shopify/themekit/issues"
-  },
-  {
+	{
+		"name": "theme_info",
+		"theme_name": "Arya y Merlina",
+		"theme_version": "1.0.0",
+		"theme_author": "Howard Parra",
+		"theme_documentation_url": "https://github.com/Shopify/themekit",
+		"theme_support_url": "https://github.com/Shopify/themekit/issues"
+	},
+	{
 		"name": "Typography",
 		"settings": [
 			{
@@ -247,7 +247,7 @@
 			{
 				"type": "select",
 				"id": "subtitle_text_transform",
-				"label": "t:settings_schema.typography.settings.subtitle_text_transform.label",
+				"label": "Text transform",
 				"options": [
 					{
 						"value": "none",
@@ -455,4 +455,204 @@
 			}
 		]
 	},
+	{
+		"name": "Colors",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Button"
+			},
+			{
+				"type": "color",
+				"id": "colors_solid_button_labels",
+				"default": "#FFFFFF",
+				"label": "Primary label",
+				"info": "Used as foreground color on accent colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_solid_button_hover_labels",
+				"default": "#FFFFFF",
+				"label": "Used as foreground color on accent colors.",
+				"info": "Used as foreground hover color on accent colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_solid_button_background",
+				"default": "#292929",
+				"label": "Primary background",
+				"info": "Used for solid button background."
+			},
+			{
+				"type": "color",
+				"id": "colors_solid_button_hover_background",
+				"default": "#3D3D3D",
+				"label": "Primary hover background",
+				"info": "Used for solid button hover background."
+			},
+			{
+				"type": "color",
+				"id": "colors_secondary_button_labels",
+				"default": "#292929",
+				"label": "Secondary label",
+				"info": "Used as foreground color on secondary colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_secondary_button_hover_labels",
+				"default": "#FFFFFF",
+				"label": "Secondary hover label",
+				"info": "Used as foreground color on secondary colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_outline_button_labels",
+				"default": "#FFFFFF",
+				"label": "Secondary background",
+				"info": "Used for solid secondary button background."
+			},
+			{
+				"type": "color",
+				"id": "colors_secondary_button_hover_background",
+				"default": "#1f1f1f",
+				"label": "Secondary hover background",
+				"info": "t:settings_schema.colors.settings.colors_secondary_button_hover_background.info"
+			},
+			{
+				"type": "color",
+				"id": "colors_tertiary_button_labels",
+				"default": "#292929",
+				"label": "Tertiary label",
+				"info": "Used as foreground color on tertiary colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_tertiary_button_background",
+				"default": "#F7F7F7",
+				"label": "Tertiary border",
+				"info": "Used for solid tertiary button border."
+			},
+			{
+				"type": "color",
+				"id": "colors_underline_button_labels",
+				"default": "#292929",
+				"label": "Underline label",
+				"info": "Used for underline button color."
+			},
+			{
+				"type": "header",
+				"content": "Input"
+			},
+			{
+				"type": "color",
+				"id": "colors_input_background",
+				"default": "#FFFFFF",
+				"label": "Background"
+			},
+			{
+				"type": "color",
+				"id": "colors_input_border",
+				"default": "#E0E0E0",
+				"label": "Border",
+				"info": "Border is enabled only on sections with Background light 1 color scheme."
+			},
+			{
+				"type": "color",
+				"id": "colors_input_hover_border",
+				"default": "#3D3D3D",
+				"label": "Border hover"
+			},
+			{
+				"type": "header",
+				"content": "Text"
+			},
+			{
+				"type": "color",
+				"id": "colors_text",
+				"default": "#292929",
+				"label": "Text",
+				"info": "Used as foreground color on background colors."
+			},
+			{
+				"type": "color",
+				"id": "colors_text_title",
+				"default": "#292929",
+				"label": "Heading",
+				"info": "Used as foreground color on background colors."
+			},
+			{
+				"type": "header",
+				"content": "Background"
+			},
+			{
+				"type": "color",
+				"id": "colors_background_1",
+				"default": "#FFFFFF",
+				"label": "Light 1",
+				"info": "Used for body."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_2",
+				"default": "#F2F1F0",
+				"label": "Light 2",
+				"info": "Used for Footer, Steps, Interactive section, Testimonials, Search modal input and light blocks on pages."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_5",
+				"default": "#F5F5F1",
+				"label": "Light 3",
+				"info": "Used for Footer and Collection list."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_3",
+				"default": "#292929",
+				"label": "Dark 1",
+				"info": "Used for Footer, Steps, Interactive section."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_4",
+				"default": "#000000",
+				"label": "Dark 2",
+				"info": "Used for Footer."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_announcement_bar_1",
+				"default": "#292929",
+				"label": "Announcement bar dark",
+				"info": "You can choose the color scheme in the section's settings"
+			},
+			{
+				"type": "color",
+				"id": "colors_background_announcement_bar_2",
+				"default": "#EEEEEE",
+				"label": "Announcement bar light",
+				"info": "You can choose the color scheme in the section's settings."
+			},
+			{
+				"type": "color",
+				"id": "colors_background_overlay",
+				"default": "#000000",
+				"label": "Overlay",
+				"info": "Used for Interactive section, Product slider, Collection page, Artcile page and Fullscreen aside promo block."
+			},
+			{
+				"type": "color",
+				"id": "colors_accent",
+				"default": "#292929",
+				"label": "Accent color",
+				"info": "Used for links text decoration, menu icons."
+			},
+			{
+				"type": "color",
+				"id": "color_border",
+				"default": "#D8D8D8",
+				"label": "Border color"
+			}
+		]
+	}
 ]
