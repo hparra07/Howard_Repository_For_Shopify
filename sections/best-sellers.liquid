@@ -228,7 +228,34 @@
 </section>
 
 {% schema %}
-{
+  {
+    "name": "Mi Nueva Sección",
+    "max_blocks": 10,
+    "settings": [
+      {
+        "type": "text",
+        "id": "titulo",
+        "label": "Título"
+      },
+      {
+        "type": "richtext",
+        "id": "contenido",
+        "label": "Contenido"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Mi Nueva Sección"
+      }
+    ]
+  }
+  {% endschema %}
+  
+    
+{% comment %}
+  
+
+/*{
   "name": "Best Sellers (Custom)",
   "settings": [
     {
@@ -324,4 +351,5 @@
   ],
   "max_blocks": 10
 }
-{% endschema %}
+{% endschema %}*/
+{% endcomment %}

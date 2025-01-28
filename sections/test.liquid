@@ -1,0 +1,32 @@
+<!-- sections/mi-nueva-seccion.liquid -->
+<section>
+  <h2>{{ section.settings.titulo }}</h2>
+  <div>
+    {{ section.settings.contenido }}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Mi Nueva Sección",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Título de Ejemplo"
+    },
+    {
+      "type": "richtext",
+      "id": "contenido",
+      "label": "Contenido",
+      "default": "<p>Texto de ejemplo</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mi Nueva Sección"
+    }
+  ]
+}
+{% endschema %}
