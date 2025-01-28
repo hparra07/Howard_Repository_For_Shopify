@@ -14,14 +14,15 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/17021-4k.jpg",
         "image_size": "medium",
-        "title": "<p>Your heading text<\/p>",
-        "content_text": "<p>Your text<\/p>",
+        "title": "<p>Hi! I'm Howard! Front-End Developer<\/p>",
+        "content_text": "<p>Crafting Digital Excellence: A Visionary Approach to Web Development.<\/p>",
         "text_alignment": "center",
         "content_width": "max",
-        "button_link": "",
-        "button_label": "explore",
-        "margin_top": 100,
-        "margin_bottom": 100
+        "button_link": "shopify:\/\/pages\/about-us",
+        "button_label": "Explore",
+        "button_style": "tertiary",
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "heading": {

@@ -1,5 +1,28 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
+    "type_header_font": "quicksand_n4",
+    "type_body_font": "abel_n4",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "mobile_menu_title": "Menu",
+          "menu": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
