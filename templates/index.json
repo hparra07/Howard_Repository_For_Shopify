@@ -27,20 +27,6 @@
         "margin_bottom": 0
       }
     },
-    "heading": {
-      "type": "heading",
-      "settings": {
-        "heading_slider": "<p>Heading</p>"
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "featured_collection": "",
-        "number_of_products_to_show": 4
-      }
-    },
     "best_sellers_yQ6qt6": {
       "type": "best-sellers",
       "blocks": {
@@ -235,8 +221,6 @@
   },
   "order": [
     "banner_with_text_Rz9DhP",
-    "heading",
-    "featured-collection",
     "best_sellers_yQ6qt6"
   ]
 }
